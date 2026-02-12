@@ -1,0 +1,180 @@
+---
+interface Link {
+    href: string;
+    label: string;
+    isCTA?: boolean;
+}
+
+const links: Link[] = [
+    { href: "/about", label: "Sobre Mí", isCTA: false },
+    { href: "/projects", label: "Proyectos", isCTA: false },
+    { href: "/stack", label: "Tecnologías", isCTA: false },
+    { href: "/contact", label: "Contacto", isCTA: true },
+];
+---
+
+<header class="w-full font-sans">
+    <nav class="w-full bg-bg">
+        <div
+            class="nav-inner mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 md:py-4"
+        >
+            <div class="flex h-16 items-center justify-between">
+                <a
+                    href="/"
+                    class="text-xl md:text-2xl font-semibold tracking-tight text-text"
+                >
+                    Ariel Ladner<span class="font-bold text-primary text-3xl"
+                        >.</span
+                    >
+                </a>
+
+                <ul class="hidden md:flex items-center gap-8">
+                    {
+                        links.map(
+                            (link) =>
+                                !link.isCTA && (
+                                    <li>
+                                        <a
+                                            href={link.href}
+                                            class="text-sm md:text-base font-medium tracking-wide text-text hover:text-primary transition-colors duration-300"
+                                        >
+                                            {link.label}
+                                        </a>
+                                    </li>
+                                ),
+                        )
+                    }
+                </ul>
+
+                <div class="hidden md:block">
+                    {
+                        links.map(
+                            (link) =>
+                                link.isCTA && (
+                                    <a
+                                        href={link.href}
+                                        class="inline-flex items-center px-8 py-2 rounded-2xl bg-primary shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-primary/30 transition-all duration-300 text-sm md:text-base font-medium tracking-wide"
+                                    >
+                                        {link.label}
+                                    </a>
+                                ),
+                        )
+                    }
+                </div>
+
+                <button
+                    id="menu-btn"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                    class="relative z-50 flex h-10 w-10 flex-col items-center justify-center md:hidden"
+                >
+                    <span
+                        class="line -translate-y-2 absolute h-0.5 w-6 transition-all duration-300 bg-text"
+                    ></span>
+                    <span
+                        class="line translate-y-2 absolute h-0.5 w-6 transition-all duration-300 bg-text"
+                    ></span>
+                    <span
+                        class="line absolute h-0.5 w-6 transition-all duration-300 bg-text"
+                    ></span>
+                </button>
+            </div>
+        </div>
+
+        <div
+            id="mobile-menu"
+            class="absolute inset-x-0 top-16 z-40 hidden flex-col items-center gap-6 py-8 md:hidden bg-bg"
+        >
+            {
+                links.map(
+                    (link) =>
+                        !link.isCTA && (
+                            <li>
+                                <a href={link.href} class="text-sm md:text-base font-medium tracking-wide text-text hover:text-primary transition-colors duration-300">
+                                    {link.label}
+                                </a>
+                            </li>
+                        ),
+                )
+            }
+            {
+                links.map(
+                    (link) =>
+                        link.isCTA && (
+                            <a
+                                href={link.href}
+                                class="inline-flex items-center px-8 py-2 rounded-2xl bg-primary shadow-lg shadow-primary/20 hover:bg-primary-hover hover:shadow-primary/30 transition-all duration-300 text-sm md:text-base font-medium"
+                            >
+                                {link.label}
+                            </a>
+                        ),
+                )
+            }
+        </div>
+    </nav>
+</header>
+
+<script>
+    const btn = document.getElementById("menu-btn") as HTMLButtonElement;
+    const menu = document.getElementById("mobile-menu") as HTMLDivElement;
+    const lines = btn.querySelectorAll(".line") as NodeListOf<HTMLElement>;
+
+    btn.addEventListener("click", () => {
+        const isOpen = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", String(!isOpen));
+
+        menu.classList.toggle("hidden");
+        menu.classList.toggle("flex");
+
+        btn.classList.toggle("open");
+
+        lines[0].classList.toggle("rotate-45");
+        lines[0].classList.toggle("translate-y-0");
+
+        lines[1].classList.toggle("opacity-0");
+
+        lines[2].classList.toggle("-rotate-45");
+        lines[2].classList.toggle("translate-y-0");
+    });
+</script>
+
+<style>
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+    }
+
+    .nav-inner {
+        animation: shrink linear both;
+        animation-timeline: scroll();
+        animation-range: 0 50px;
+    }
+
+    @media screen and (width >= 48rem) {
+        @keyframes shrink {
+            from {
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+            to {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+        }
+    }
+
+    @media screen and (width < 48rem) {
+        @keyframes shrink {
+            from {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+            to {
+                padding-top: 0.5rem;
+                padding-bottom: 0.5rem;
+            }
+        }
+    }
+</style>
