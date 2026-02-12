@@ -1,0 +1,54 @@
+---
+import ArrowRight from '@assets/icons/ArrowRight.astro'
+---
+
+<section id="hero" aria-labelledby="hero-title" class="relative w-full h-dvh bg-bg pt-6 md:pt-10 overflow-hidden">
+    <div
+        aria-hidden="true"
+        class="absolute bg-primary/20 -top-20 left-20 md:-top-100 md:left-80 w-[200px] h-[200px] md:w-[500px] md:h-[500px] rounded-full blur-3xl"
+    ></div>
+
+    <div
+        aria-hidden="true"
+        class="absolute bg-primary/20 bottom-20 left-20 md:-bottom-70 md:-left-70 w-[200px] h-[200px] md:w-[500px] md:h-[500px] rounded-full blur-3xl"
+    ></div>
+
+    <div
+        aria-hidden="true"
+        class="absolute bg-primary/20 bottom-20 right-20 md:-top-40 md:-right-40 w-[200px] h-[200px] md:w-[500px] md:h-[500px] rounded-full blur-3xl"
+    ></div>
+    
+    <div class="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col gap-10 md:gap-12">
+        <header class="max-w-4xl flex flex-col gap-4">
+            <h1
+                class="font-sans text-text text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-tight tracking-tight"
+            >
+                Frontend Developer especializado en
+                <span class="text-primary text-shadow-primary"> rendimiento</span> y arquitectura
+            </h1>
+
+            <p class="leading-relaxed text-text-muted max-w-xl">
+                Ingeniero en sistemas en formación. Construyo experiencias digitales rápidas y accesibles.
+            </p>
+        </header>
+
+        <nav
+            aria-label="Acciones principales"
+            class="flex flex-col sm:flex-row items-center justify-start gap-4 relative z-10"
+        >
+            <a
+                href="/projects"
+                class="inline-flex items-center justify-center px-8 py-3 md:py-4 rounded-2xl text-bg text-base font-medium bg-primary hover:bg-primary-hover transition-colors duration-200 gap-2"
+            >
+                Ver proyectos<ArrowRight />
+            </a>
+
+            <a
+                href="/about"
+                class="inline-flex items-center justify-center px-8 py-3 md:py-4 rounded-2xl text-text text-base font-medium border border-text hover:bg-text/10 transition-colors duration-200"
+            >
+                Sobre mí
+            </a>
+        </nav>
+    </div>
+</section>
