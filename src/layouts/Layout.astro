@@ -1,0 +1,38 @@
+---
+import "@styles/global.css";
+import { siteConfig } from "@data/site";
+
+---
+
+<!doctype html>
+<html lang="es-AR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{siteConfig.seo.title}</title>
+
+		<meta name="description" content={siteConfig.seo.description}>
+		<meta name="keywords" content={siteConfig.seo.keywords.join(", ")}>
+		<meta name="author" content={siteConfig.author}>
+		<meta name="robots" content={siteConfig.seo.robots}>
+		<meta name="canonical" content={siteConfig.seo.canonical}>
+
+		<meta name="og:title" content={siteConfig.openGraph.title}>
+		<meta name="og:description" content={siteConfig.openGraph.description}>
+		<meta name="og:image" content={siteConfig.openGraph.image}>
+		<meta name="og:url" content={siteConfig.openGraph.url}>
+		<meta name="og:type" content={siteConfig.openGraph.type}>
+		<meta name="og:locale" content={siteConfig.openGraph.locale}>
+		
+		<meta name="twitter:card" content={siteConfig.twitter.card}>
+		<meta name="twitter:title" content={siteConfig.twitter.title}>
+		<meta name="twitter:description" content={siteConfig.twitter.description}>
+		<meta name="twitter:image" content={siteConfig.twitter.image}>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
