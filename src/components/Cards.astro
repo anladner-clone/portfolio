@@ -1,0 +1,68 @@
+---
+import ArrowRight from "@assets/icons/ArrowRight.astro";
+import type { Project } from "@data/projects";
+
+interface Props {
+    project: Project;
+}
+
+const { project } = Astro.props;
+---
+
+<li>
+    <article
+        class="group overflow-hidden rounded-xl border border-border bg-surface transition-all duration-300 hover:-translate-y-1"
+    >
+        <div class="relative overflow-hidden">
+            <img
+                src={project.image}
+                alt={project.title}
+                class="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+
+            <div
+                class="absolute inset-0 bg-primary/20 transition-opacity duration-300 group-hover:opacity-0"
+            >
+            </div>
+        </div>
+
+        <div class="p-6 space-y-4">
+            <header class="space-y-2">
+                <h3
+                    class="text-text font-semibold leading-tight
+                 text-[clamp(1.25rem,2vw,1.5rem)]"
+                >
+                    {project.title}
+                </h3>
+
+                <p
+                    class="text-text-muted leading-relaxed
+                 text-[clamp(0.9rem,1vw,1rem)]"
+                >
+                    {project.shortDescription}
+                </p>
+            </header>
+
+            <ul class="flex flex-wrap gap-2">
+                {
+                    project.tech.map((tech) => (
+                        <li
+                            class="px-3 py-1 text-xs rounded-md bg-primary/10 text-primary"
+                        >
+                            {tech}
+                        </li>
+                    ))
+                }
+            </ul>
+
+            <a
+                href={`/projects/${project.slug}`}
+                class="inline-flex items-center gap-2 text-bg bg-primary px-4 py-2 rounded-md font-medium
+             hover:bg-primary-hover hover:text-text-mutec transition-colors"
+            >
+                Ver proyecto
+                <ArrowRight />
+            </a>
+        </div>
+    </article>
+</li>

@@ -1,0 +1,54 @@
+---
+import ArrowRight from "@assets/icons/ArrowRight.astro";
+import Card from "@components/Cards.astro";
+
+import { projects } from "@data/projects";
+
+---
+
+<section aria-labelledby="projects-heading" class="w-full py-24 bg-bg">
+    <div class="max-w-7xl mx-auto px-6 space-y-16">
+        <header
+            class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between"
+        >
+            <div class="space-y-4 max-w-prose">
+                <h2
+                    id="projects-heading"
+                    class="text-text font-semibold leading-[1.1] tracking-tight
+                 text-[clamp(1.75rem,4vw,3rem)]"
+                >
+                    Proyectos Destacados
+                </h2>
+
+                <p
+                    class="text-text-muted leading-relaxed
+                  text-[clamp(1rem,1.2vw,1.125rem)]"
+                >
+                    Aquí puedes ver algunos de mis proyectos más relevantes en
+                    rendimiento, arquitectura y experiencia de usuario.
+                </p>
+            </div>
+
+            <div>
+                <a
+                    href="/projects"
+                    class="inline-flex items-center gap-2 text-primary font-medium
+                 hover:gap-3 transition-all duration-300"
+                >
+                    Ver todos los proyectos
+                    <ArrowRight
+                        class="transition-transform duration-300 group-hover:translate-x-1"
+                    />
+                </a>
+            </div>
+        </header>
+
+        <ul class="grid gap-8 grid-rows-1 sm:grid-cols-2 lg:grid-cols-3">
+            {
+                projects.map((project) => (
+                    <Card project={project} />
+                ))
+            }
+        </ul>
+    </div>
+</section>
