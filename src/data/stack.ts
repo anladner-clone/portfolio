@@ -5,7 +5,20 @@ export interface Stack {
 }
 
 export const stack: Stack = {
-    frontend: ["HTML", "CSS", "JavaScript", "AstroJS", "ReactJS", "TailwindCSS"],
-    backend: ["Python", "API REST"],
-    tools: ["Git", "GitHub", "Figma", "VS Code", "Canva"]
-}
+    frontend: [
+        "Astro",
+        "React",
+        "JavaScript",
+        "Tailwind CSS"
+    ],
+    backend: [
+        "Python",
+        "REST APIs"
+    ],
+    tools: [
+        "Git",
+        "GitHub",
+        "Vercel",
+        "Figma"
+    ]
+};

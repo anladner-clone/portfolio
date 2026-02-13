@@ -2,67 +2,80 @@
 import { stack } from "@data/stack";
 ---
 
-<section
-  aria-labelledby="stack-heading"
-  class="w-full py-24 bg-surface"
->
-  <div class="max-w-6xl mx-auto px-6 space-y-16 text-center">
-
-    <header class="space-y-4 max-w-prose mx-auto">
-      <h2
-        id="stack-heading"
-        class="text-text font-semibold leading-[1.1] tracking-tight
+<section aria-labelledby="stack-heading" class="w-full py-24 bg-surface">
+    <div class="max-w-6xl mx-auto px-6 space-y-16 text-center">
+        <header class="space-y-4 max-w-prose mx-auto">
+            <h2
+                id="stack-heading"
+                class="text-text font-semibold leading-[1.1] tracking-tight
                text-[clamp(1.75rem,4vw,3rem)]"
-      >
-        Stack Tecnológico
-      </h2>
+            >
+                Tecnologías
+            </h2>
 
-      <p
-        class="text-text-muted leading-relaxed
+            <p
+                class="text-text-muted leading-relaxed
                text-[clamp(1rem,1.2vw,1.125rem)]"
-      >
-        Herramientas que utilizo para dar vida a mis ideas.
-      </p>
-    </header>
+            >
+                Las tecnologías que utilizo para diseñar, estructurar y
+                desplegar productos digitales.
+            </p>
+        </header>
 
-    <div class="grid gap-16 md:grid-cols-3 max-w-3xl mx-auto">
-      <article class="space-y-6">
-        <h3 class="text-xl font-semibold border-b border-primary pb-2 rounded-xs text-primary text-start pl-2">
-          Frontend
-        </h3>
+        <div class="grid gap-16 md:grid-cols-3 max-w-3xl mx-auto">
+            <article class="space-y-6">
+                <h3
+                    class="text-xl font-semibold border-b border-primary pb-2 rounded-xs text-primary text-start pl-2"
+                >
+                    Frontend
+                </h3>
 
-        <ul class="space-y-3 text-text-muted">
-          {stack.frontend.map((item) => (
-            <li class="rounded-xl bg-bg py-2 text-start pl-4">{item}</li>
-          ))}
-        </ul>
-      </article>
+                <ul class="space-y-3 text-text-muted">
+                    {
+                        stack.frontend.map((item) => (
+                            <li class="rounded-xl bg-bg py-2 text-start pl-4">
+                                {item}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </article>
 
-      <article class="space-y-6">
-        <h3 class="text-xl font-semibold border-b border-primary pb-2 rounded-xs text-primary text-start pl-2">
-          Backend
-        </h3>
+            <article class="space-y-6">
+                <h3
+                    class="text-xl font-semibold border-b border-primary pb-2 rounded-xs text-primary text-start pl-2"
+                >
+                    Backend
+                </h3>
 
-        <ul class="space-y-3 text-text-muted">
-          {stack.backend.map((item) => (
-            <li class="rounded-xl bg-bg py-2 text-start pl-4">{item}</li>
-          ))}
-        </ul>
-      </article>
+                <ul class="space-y-3 text-text-muted">
+                    {
+                        stack.backend.map((item) => (
+                            <li class="rounded-xl bg-bg py-2 text-start pl-4">
+                                {item}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </article>
 
-      <article class="space-y-6">
-        <h3 class="text-xl font-semibold border-b border-primary pb-2 rounded-xs text-primary text-start pl-2">
-          Herramientas
-        </h3>
+            <article class="space-y-6">
+                <h3
+                    class="text-xl font-semibold border-b border-primary pb-2 rounded-xs text-primary text-start pl-2"
+                >
+                    Herramientas
+                </h3>
 
-        <ul class="space-y-3 text-text-muted">
-          {stack.tools.map((item) => (
-            <li class="rounded-xl bg-bg py-2 text-start pl-4">{item}</li>
-          ))}
-        </ul>
-      </article>
-
+                <ul class="space-y-3 text-text-muted">
+                    {
+                        stack.tools.map((item) => (
+                            <li class="rounded-xl bg-bg py-2 text-start pl-4">
+                                {item}
+                            </li>
+                        ))
+                    }
+                </ul>
+            </article>
+        </div>
     </div>
-
-  </div>
 </section>
