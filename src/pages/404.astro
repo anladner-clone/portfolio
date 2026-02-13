@@ -1,0 +1,53 @@
+---
+import Layout from "@layouts/Layout.astro";
+import NavBar from "@components/ui/NavBar.astro";
+import Footer from "@components/ui/Footer.astro";
+---
+
+<Layout>
+    <NavBar />
+
+    <section
+        class="min-h-screen flex items-center justify-center bg-surface px-6"
+    >
+        <div class="text-center max-w-xl space-y-8">
+            <div class="space-y-4">
+                <h1
+                    class="text-primary font-semibold tracking-tight leading-none
+                 text-[clamp(4rem,10vw,8rem)]"
+                >
+                    404
+                </h1>
+
+                <h2
+                    class="text-text font-semibold
+                 text-[clamp(1.5rem,3vw,2rem)]"
+                >
+                    Esta ruta no existe
+                </h2>
+
+                <p
+                    class="text-text-muted leading-relaxed
+                text-[clamp(1rem,1.2vw,1.125rem)]"
+                >
+                    La página que buscas no está disponible o fue movida. Puedes
+                    volver al inicio y continuar explorando.
+                </p>
+            </div>
+
+            <div>
+                <a
+                    href="/"
+                    class="inline-flex items-center justify-center
+               px-6 py-3 rounded-xl
+               bg-primary text-bg
+               font-medium transition hover:opacity-90"
+                >
+                    Volver al inicio
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <Footer/>
+</Layout>
