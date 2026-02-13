@@ -13,10 +13,10 @@ const links: Link[] = [
 ];
 ---
 
-<header class="w-full font-sans">
-    <nav class="w-full bg-bg">
+<header class="w-full font-sans bg-bg/80 fixed top-0 z-50">
+    <nav class="w-full backdrop-blur-sm">
         <div
-            class="nav-inner mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 md:py-4"
+            class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 md:py-4"
         >
             <div class="flex h-16 items-center justify-between">
                 <a
@@ -138,43 +138,3 @@ const links: Link[] = [
         lines[2].classList.toggle("translate-y-0");
     });
 </script>
-
-<style>
-    header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-    }
-
-    .nav-inner {
-        animation: shrink linear both;
-        animation-timeline: scroll();
-        animation-range: 0 50px;
-    }
-
-    @media screen and (width >= 48rem) {
-        @keyframes shrink {
-            from {
-                padding-top: 1.5rem;
-                padding-bottom: 1.5rem;
-            }
-            to {
-                padding-top: 1rem;
-                padding-bottom: 1rem;
-            }
-        }
-    }
-
-    @media screen and (width < 48rem) {
-        @keyframes shrink {
-            from {
-                padding-top: 1rem;
-                padding-bottom: 1rem;
-            }
-            to {
-                padding-top: 0.5rem;
-                padding-bottom: 0.5rem;
-            }
-        }
-    }
-</style>
