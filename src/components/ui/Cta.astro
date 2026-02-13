@@ -1,0 +1,67 @@
+---
+import FileLines from '@assets/icons/FileLines.astro'
+import MailSolid from '@assets/icons/MailSolid.astro'
+---
+
+<section
+    id="contact"
+    aria-labelledby="contact-heading"
+    class="relative overflow-hidden py-24 bg-bg"
+>
+    <div
+        class="absolute inset-0 flex items-center justify-center pointer-events-none"
+        aria-hidden="true"
+    >
+        <div class="w-1/2 h-1/2 bg-primary/5 blur-3xl rounded-full"></div>
+    </div>
+
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center space-y-10">
+        <header class="space-y-6">
+            <h2
+                id="contact-heading"
+                class="font-bold tracking-tight text-text leading-[1.1]
+               text-[clamp(2rem,5vw,3.5rem)]"
+            >
+                ¿Trabajamos juntos?
+            </h2>
+
+            <p
+                class="text-text-muted leading-relaxed mx-auto max-w-prose
+               text-[clamp(1rem,1.3vw,1.25rem)]"
+            >
+                Siempre estoy abierto a discutir nuevos proyectos, ideas
+                creativas u oportunidades para ser parte de tus visiones.
+            </p>
+        </header>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <a
+                href="mailto:contact@nicolasladner.dev"
+                class="inline-flex items-center justify-center gap-2
+               px-8 py-4 rounded-lg font-semibold
+               text-[clamp(0.95rem,1vw,1.05rem)]
+               bg-primary text-black
+               shadow-glow hover:shadow-glow-hover
+               transition-all duration-300
+               hover:-translate-y-1"
+            >
+                <MailSolid />
+                Enviar mensaje
+            </a>
+
+            <a
+                href="/cv_ariel-ladner.pdf"
+                class="inline-flex items-center justify-center gap-2
+               px-8 py-4 rounded-lg
+               text-[clamp(0.95rem,1vw,1.05rem)]
+               font-medium
+               border border-white/10
+               text-white hover:bg-white/5
+               transition-all duration-300"
+            >
+                <FileLines />
+                Descargar CV
+            </a>
+        </div>
+    </div>
+</section>
